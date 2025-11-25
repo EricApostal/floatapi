@@ -31,7 +31,7 @@ export 'models/cdn_delivery_v2_quality_level_model.dart';
 export 'models/cdn_delivery_v2_resource_model.dart';
 export 'models/cdn_delivery_v2_vod_livestream_response.dart';
 export 'models/cdn_delivery_v2_download_response.dart';
-export 'models/cdn_delivery_v2_response_sealed.dart';
+export 'models/cdn_delivery_v2_response_sealed_sealed.dart';
 export 'models/cdn_delivery_v3_response.dart';
 export 'models/cdn_delivery_v3_group.dart';
 export 'models/cdn_delivery_v3_origin.dart';

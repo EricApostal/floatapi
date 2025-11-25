@@ -204,7 +204,7 @@
           - "client"
           - "strategy"
           - "resource"
-      CdnDeliveryV2Response: 
+      CdnDeliveryV2ResponseSealed: 
         oneOf: 
           - 
             $ref: "#/components/schemas/CdnDeliveryV2VodLivestreamResponse"
@@ -2781,7 +2781,7 @@
             content: 
               application/json: 
                 schema: 
-                  $ref: "#/components/schemas/CdnDeliveryV2Response"
+                  $ref: "#/components/schemas/CdnDeliveryV2ResponseSealed"
                 example: 
                   cdn: "https://cdn-vod-drm2.floatplane.com"
                   strategy: "cdn"
