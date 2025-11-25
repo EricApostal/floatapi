@@ -6,11 +6,7 @@ Future<void> main() async {
     baseUrl: Uri.parse('https://www.floatplane.com'),
   );
 
-  // final authResponse = await client.apiV2AuthLoginPost(
-  //   body: AuthLoginV2Request(
-
-  //   ),
-  // );
+  // final authResponse = await client.apiAuth(body: AuthLoginV2Request());
   // print(authResponse.statusCode);
   // final response = await client.apiV3CreatorListGet(search: "Linus");
 
