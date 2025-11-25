@@ -1,22 +1,9 @@
+import 'package:dio/dio.dart';
 import 'package:floatapi/floatapi.dart';
 
 Future<void> main() async {
-  // Create the client
-  final client = Floatplane.create(
-    baseUrl: Uri.parse('https://www.floatplane.com'),
-  );
-
-  // final authResponse = await client.apiAuth(body: AuthLoginV2Request());
-  // print(authResponse.statusCode);
-  // final response = await client.apiV3CreatorListGet(search: "Linus");
-
-  // if (response.isSuccessful) {
-  //   final List<CreatorModelV3> items = response.body ?? [];
-  //   print('FAQs:');
-  //   for (final section in items) {
-  //     print(section.about);
-  //   }
-  // } else {
-  //   print('Error: ${response.error}');
-  // }
+  final dio = Dio();
+  final client = RestClient(dio, baseUrl: 'https://www.floatplane.com');
+  final captcha = await client.authV3.getCaptchaInfo();
+  print(captcha);
 }
