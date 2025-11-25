@@ -1,0 +1,8 @@
+swagger_parser:
+  schema_path: schemes/floatplane.yaml
+  output_directory: lib/api
+  language: dart
+  json_serializer: dart_mappable
+  client_generator: retrofit
+  name: FloatClient
+  merge_schemas: true
