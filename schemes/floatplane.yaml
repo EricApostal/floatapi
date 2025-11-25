@@ -182,23 +182,28 @@
           - "strategy"
           - "resource"
       CdnDeliveryV2DownloadResponse: 
-        allOf: 
-          - 
-            $ref: "#/components/schemas/EdgesModel"
-          - 
+        type: "object"
+        properties: 
+          edges: 
+            type: "array"
+            items: 
+              $ref: "#/components/schemas/EdgeModel"
+          client: 
             type: "object"
-            properties: 
-              strategy: 
-                type: "string"
-                description: "Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream."
-                enum: 
-                  - "cdn"
-                  - "client"
-              resource: 
-                $ref: "#/components/schemas/CdnDeliveryV2ResourceModel"
-            required: 
-              - "strategy"
-              - "resource"
+            additionalProperties: true
+          strategy: 
+            type: "string"
+            description: "Which download/streaming strategy to use. If `cdn`, then a `cdn` property will be included with the response. Otherwise, if set to `client`, then a `client` property will be included with the response. The cdn or client property should be combined with the `resource` property to perform the download/stream."
+            enum: 
+              - "cdn"
+              - "client"
+          resource: 
+            $ref: "#/components/schemas/CdnDeliveryV2ResourceModel"
+        required: 
+          - "edges"
+          - "client"
+          - "strategy"
+          - "resource"
       CdnDeliveryV2Response: 
         oneOf: 
           - 

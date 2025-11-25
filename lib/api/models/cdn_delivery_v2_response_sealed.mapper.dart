@@ -352,6 +352,9 @@ class CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponseMapper
             CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponseMapper._(),
       );
       CdnDeliveryV2ResponseSealedMapper.ensureInitialized();
+      EdgeModelMapper.ensureInitialized();
+      CdnDeliveryV2DownloadResponseStrategyMapper.ensureInitialized();
+      CdnDeliveryV2ResourceModelMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -359,14 +362,57 @@ class CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponseMapper
   @override
   final String id = 'CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse';
 
+  static List<EdgeModel> _$edges(
+    CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse v,
+  ) => v.edges;
+  static const Field<
+    CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse,
+    List<EdgeModel>
+  >
+  _f$edges = Field('edges', _$edges);
+  static dynamic _$client(
+    CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse v,
+  ) => v.client;
+  static const Field<
+    CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse,
+    dynamic
+  >
+  _f$client = Field('client', _$client);
+  static CdnDeliveryV2DownloadResponseStrategy _$strategy(
+    CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse v,
+  ) => v.strategy;
+  static const Field<
+    CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse,
+    CdnDeliveryV2DownloadResponseStrategy
+  >
+  _f$strategy = Field('strategy', _$strategy);
+  static CdnDeliveryV2ResourceModel _$resource(
+    CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse v,
+  ) => v.resource;
+  static const Field<
+    CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse,
+    CdnDeliveryV2ResourceModel
+  >
+  _f$resource = Field('resource', _$resource);
+
   @override
   final MappableFields<CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse>
-  fields = const {};
+  fields = const {
+    #edges: _f$edges,
+    #client: _f$client,
+    #strategy: _f$strategy,
+    #resource: _f$resource,
+  };
 
   static CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse _instantiate(
     DecodingData data,
   ) {
-    return CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse();
+    return CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse(
+      edges: data.dec(_f$edges),
+      client: data.dec(_f$client),
+      strategy: data.dec(_f$strategy),
+      resource: data.dec(_f$resource),
+    );
   }
 
   @override
@@ -478,8 +524,21 @@ abstract class CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponseCopyWith<
     implements
         CdnDeliveryV2ResponseSealedCopyWith<$R, $In, $Out>,
         CdnDeliveryV2DownloadResponseCopyWith<$R, $In, $Out> {
+  ListCopyWith<$R, EdgeModel, EdgeModelCopyWith<$R, EdgeModel, EdgeModel>>
+  get edges;
+  CdnDeliveryV2ResourceModelCopyWith<
+    $R,
+    CdnDeliveryV2ResourceModel,
+    CdnDeliveryV2ResourceModel
+  >
+  get resource;
   @override
-  $R call();
+  $R call({
+    List<EdgeModel>? edges,
+    dynamic client,
+    CdnDeliveryV2DownloadResponseStrategy? strategy,
+    CdnDeliveryV2ResourceModel? resource,
+  });
   CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponseCopyWith<
     $R2,
     $In,
@@ -517,11 +576,42 @@ class _CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponseCopyWithImpl<
   $mapper =
       CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponseMapper.ensureInitialized();
   @override
-  $R call() => $apply(FieldCopyWithData({}));
+  ListCopyWith<$R, EdgeModel, EdgeModelCopyWith<$R, EdgeModel, EdgeModel>>
+  get edges => ListCopyWith(
+    $value.edges,
+    (v, t) => v.copyWith.$chain(t),
+    (v) => call(edges: v),
+  );
+  @override
+  CdnDeliveryV2ResourceModelCopyWith<
+    $R,
+    CdnDeliveryV2ResourceModel,
+    CdnDeliveryV2ResourceModel
+  >
+  get resource => $value.resource.copyWith.$chain((v) => call(resource: v));
+  @override
+  $R call({
+    List<EdgeModel>? edges,
+    Object? client = $none,
+    CdnDeliveryV2DownloadResponseStrategy? strategy,
+    CdnDeliveryV2ResourceModel? resource,
+  }) => $apply(
+    FieldCopyWithData({
+      if (edges != null) #edges: edges,
+      if (client != $none) #client: client,
+      if (strategy != null) #strategy: strategy,
+      if (resource != null) #resource: resource,
+    }),
+  );
   @override
   CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse $make(
     CopyWithData data,
-  ) => CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse();
+  ) => CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse(
+    edges: data.get(#edges, or: $value.edges),
+    client: data.get(#client, or: $value.client),
+    strategy: data.get(#strategy, or: $value.strategy),
+    resource: data.get(#resource, or: $value.resource),
+  );
 
   @override
   CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponseCopyWith<

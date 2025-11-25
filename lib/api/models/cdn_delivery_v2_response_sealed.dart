@@ -8,6 +8,8 @@ import 'cdn_delivery_v2_resource_model.dart';
 import 'cdn_delivery_v2_vod_livestream_response_strategy.dart';
 import 'cdn_delivery_v2_vod_livestream_response.dart';
 import 'cdn_delivery_v2_download_response.dart';
+import 'edge_model.dart';
+import 'cdn_delivery_v2_download_response_strategy.dart';
 
 part 'cdn_delivery_v2_response_sealed.mapper.dart';
 
@@ -117,5 +119,19 @@ class CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse
     extends CdnDeliveryV2ResponseSealed
     with CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponseMappable
     implements CdnDeliveryV2DownloadResponse {
-  const CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse();
+  @override
+  final List<EdgeModel> edges;
+  @override
+  final dynamic client;
+  @override
+  final CdnDeliveryV2DownloadResponseStrategy strategy;
+  @override
+  final CdnDeliveryV2ResourceModel resource;
+
+  const CdnDeliveryV2ResponseSealedCdnDeliveryV2DownloadResponse({
+    required this.edges,
+    required this.client,
+    required this.strategy,
+    required this.resource,
+  });
 }
