@@ -20,7 +20,7 @@ class _Cdnv2Client implements Cdnv2Client {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<InvalidType> getDeliveryInfo({
+  Future<CdnDeliveryV2ResponseSealed> getDeliveryInfo({
     required Type type,
     String? guid,
     String? creator,
@@ -34,7 +34,7 @@ class _Cdnv2Client implements Cdnv2Client {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<InvalidType>(
+    final _options = _setStreamType<CdnDeliveryV2ResponseSealed>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -45,9 +45,9 @@ class _Cdnv2Client implements Cdnv2Client {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late InvalidType _value;
+    late CdnDeliveryV2ResponseSealed _value;
     try {
-      _value = InvalidType.fromJson(_result.data!);
+      _value = CdnDeliveryV2ResponseSealed.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options, _result);
       rethrow;

@@ -5,7 +5,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../models/cdn_delivery_v2_response.dart';
+import '../models/cdn_delivery_v2_response_sealed.dart';
 import '../models/type.dart';
 
 part 'cdnv2_client.g.dart';
@@ -29,7 +29,7 @@ abstract class Cdnv2Client {
   ///
   /// [creator] - The GUID of the creator for a livestream, retrievable from `CreatorModelV2.id`. Required when `type` is `live`. Note: either this or `guid` must be supplied. Note: for `vod` and `download`, including this `creator` parameter *will* cause an error to be returned.
   @GET('/api/v2/cdn/delivery')
-  Future<CdnDeliveryV2Response> getDeliveryInfo({
+  Future<CdnDeliveryV2ResponseSealed> getDeliveryInfo({
     @Query('type') required Type type,
     @Query('guid') String? guid,
     @Query('creator') String? creator,
